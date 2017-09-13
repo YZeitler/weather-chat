@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -11,11 +11,59 @@
 
 <body>
 
+    <div class="row">
+        <div class="col-md-2"> </div>
+        <h2 class="col-md-3 header">Weather Chat</h2>
+        <div class="col-md-7"> </div>
+    </div>
 
-    <script type="text/javascript" src="jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="handlebars/dist/handlebars.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <div class=" row ">
+        <div class="col-md-2 "> </div>
+        <form id="weather_form">
+            <input class="col-md-7 city-input" id="city-search" type="text " placeholder="Enter City ">
+            <button type="submit" class="col-md-1 tempButton btn btn-primary">Get Temp</button>
+        </form>
+        <div class="col-md-2 "></div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-2 "> </div>
+        <hr class="col-md-8 hr"><br>
+        <div class="col-md-2 "></div>
+    </div>
+
+
+
+    <div class="results ">
+    </div>
+
+    <script id="store-template" type="text/x-handlebars-template ">
+        <div class="row div">
+            <div class="col-md-2 "> </div>
+            <div class="col-md-8 weather ">
+                <div class="card-container">
+                    <h4 class="card-title ">{{city}}<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></h4>
+                    <p class="card-text ">{{celsius}}°C / {{fahrenheit}}°F {{time}}</p>
+                    <div class="comments">
+                        {{#each comments}}
+                        <div class="comment"> {{ text }} </div>
+                        {{/each}}
+                    </div>
+                    <div class="commentRow">
+                        <form class="comment_form">
+                            <input class="comment-input" type="text " placeholder="Comment about the weather in {{city}}"><button type="submit" class="commentButton btn btn-success">Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 "></div>
+        </div>
+    </script>
+
+    <script src="jquery/dist/jquery.js "></script>
+    <script src="bootstrap/dist/js/bootstrap.js "></script>
+    <script src="handlebars/dist/handlebars.js "></script>
+    <script type="text/javascript " src="script.js "></script>
 </body>
 
 </html>
